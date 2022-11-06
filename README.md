@@ -11,9 +11,10 @@ CONN_STRING=mysql+aiomysql://{username}:{password}@{host}:{port}/{database}
 
 #### Also you need to replace ```username``` and *others* values in the ```CONN_STRING```
 
-### That`s It! Run this command in the root directory 
+### That`s It! Run this commands in the root directory 
 
 ```console
+$ > pip3 install -r requirements.txt
 $ > app.py
 ```
 
