@@ -1,7 +1,7 @@
 # Telegram-bot template with Aiogram & SQLAlchemy
 
 ### Quickly start:
-#### You need to create ```.env``` file in ```./settings``` folder and add there this values:
+#### You need to create ```.env``` file in ```./settings``` folder and add there these values:
 
 ```
 BOT_TOKEN=

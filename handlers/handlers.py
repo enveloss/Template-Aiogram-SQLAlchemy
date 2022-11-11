@@ -29,5 +29,10 @@ async def message_handler(message: aiogram.types.Message, state: FSMContext):
 async def callback_query(call: aiogram.types.CallbackQuery, state: FSMContext):
 	state_string = await state.get_state()
 	state_vars = get_state_vars(state_string)
+
+	if state_string == None: state_vars =  {
+		"state_type": 'user',
+		"handler_type": 'inline'
+	} 
 	
 	await run_handler(**state_vars, update=call, state=state)

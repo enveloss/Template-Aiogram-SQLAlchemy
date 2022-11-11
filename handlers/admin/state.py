@@ -1,6 +1,6 @@
 from modules import *
 
-async def handler(state: FSMContext, message: aiogram.types.Message):
+async def handler(message: aiogram.types.Message, state: FSMContext):
 	state_data = await state.get_state()
 	
 	if message.text == '/restart':
