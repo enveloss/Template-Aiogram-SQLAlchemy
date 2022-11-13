@@ -35,6 +35,6 @@ async def handler(message: aiogram.types.Message, state: FSMContext):
 			await handler_start_command(message, result['data']['command'], result['data']['data'])
 	
 	if 'admin' in message.text.lower():
-		if message.chat.id in db.json_config.getAdmins():
+		if message.chat.id in db.json_config.get_admins():
 			await states.Admin._.set()
 			await message.answer('<b>Админ-Панель</b>', reply_markup=ADMIN)

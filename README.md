@@ -21,5 +21,6 @@ $ > app.py
 ### There are also Others Opportunities here: 
 - APScheduler
 - Logger
+- JSONConfig -> [docs here](https://github.com/lioppp/py_json_config)
 - Made Middlewares 
 - Simple admin-section (you need to setting it)

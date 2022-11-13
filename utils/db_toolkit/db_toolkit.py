@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from random import randint, random, choice
 from time import sleep
 
-import string, json
+import string, json, py_json_config
 
 from uuid import uuid4
 
@@ -43,33 +43,8 @@ class Helper:
 		chars=string.ascii_uppercase + string.ascii_lowercase + string.digits
 		return ''.join(choice(chars) for _ in range(0, size))		
 
-class JSONConfig:
-	def __init__(self, path='./settings/config.json') -> None:
-		self.path = path
-	
-	def get_data(self) -> dict:
-		with open(self.path, encoding='utf-8') as file:
-			return json.load(file)
-
-	def _save_data(self, data: dict) -> None:
-		with open(self.path, 'w', encoding='utf-8') as file:
-			return json.dump(data, file, indent=4, ensure_ascii=False)
-
-	def _get_pretty_path(self, path: str) -> str:
-		path = ".".join([f"'{key}'" for key in path.split('.')])
-		path =  f"[{path.replace('.', '][')}]"
-
-		return path
-	
-	def set_value(self, path: str, value) -> None:
-		data = self.get_data()
-		exec(f"data{self._get_pretty_path(path)} = {value}")
-		self._save_data(data)
-	
-	def get_value(self, path: str) -> None:
-		return eval(f"{self.get_data()}{self._get_pretty_path(path)}")
-	
-	def getAdmins(self):
+class JSONConfig(py_json_config.JSONConfig):	
+	def get_admins(self):
 		return self.get_value('admins')
 
 helper = Helper()
