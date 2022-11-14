@@ -1,3 +1,4 @@
 settings/.env
 tests
 logs/
+__pycache__*

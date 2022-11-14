@@ -49,6 +49,6 @@ class JSONConfig(py_json_config.JSONConfig):
 
 helper = Helper()
 date_helper = DateHelper()
-json_config = JSONConfig()
+json_config = JSONConfig(config_path='./settings/config.json')
 
 from .SQLALchemy.db import *
